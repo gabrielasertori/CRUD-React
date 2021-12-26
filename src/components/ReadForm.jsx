@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
-import { Table } from 'semantic-ui-react';
+import { Table, TableCell, Button } from 'semantic-ui-react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export function ReadForm() {
 	const [data, setData] = useState([]);
@@ -11,6 +12,14 @@ export function ReadForm() {
 			.then((res) => {setData(res.data)})
 	}, [])
 
+	const handleKeepData = (data) => {
+		let { id, firstName, email, subscribe } = data;
+        localStorage.setItem('Id', id);
+        localStorage.setItem('First Name', firstName);
+        localStorage.setItem('Email', email);
+        localStorage.setItem('Subscribe', subscribe);
+	}
+
 	return (
 		<Table singleLine>
 			<Table.Header>
@@ -18,6 +27,7 @@ export function ReadForm() {
 					<Table.HeaderCell>Name</Table.HeaderCell>
 					<Table.HeaderCell>Email</Table.HeaderCell>
 					<Table.HeaderCell>Subscribed</Table.HeaderCell>
+					<Table.HeaderCell>Update</Table.HeaderCell>
 				</Table.Row>
 			</Table.Header>
 
@@ -28,6 +38,11 @@ export function ReadForm() {
 					<Table.Cell>{entry.firstName}</Table.Cell>
 					<Table.Cell>{entry.email}</Table.Cell>
 					<Table.Cell>{entry.subscribe ? 'Yes' : 'No'}</Table.Cell>
+					<TableCell>
+						<Link to="/update">
+							<Button onClick={() => handleKeepData(entry)}>Update</Button>
+						</Link>
+					</TableCell>
 				</Table.Row>
 				)
 			})}
