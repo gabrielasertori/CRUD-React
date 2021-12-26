@@ -17,14 +17,10 @@ export function UpdateForm() {
 		})
 	}
 
-	console.log("Subs " + subscribe);
-	console.log(typeof(subscribe));
-
 	useEffect(() => {
 		setId(localStorage.getItem('Id'));
 		setFirstName(localStorage.getItem('First Name'));
 		setEmail(localStorage.getItem('Email'));
-		setSubscribe(localStorage.getItem('Subscribe'));
 	}, [])
 
 	return (

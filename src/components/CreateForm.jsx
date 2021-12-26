@@ -36,7 +36,7 @@ export function CreateForm() {
 			<input placeholder='Email' onChange={(e) => setEmail(e.target.value)}/>
 		</Form.Field>
 		<Form.Field>
-			<Checkbox label='subscribe to our newsletter' checked={true} onChange={() => setSubscribe(!subscribe)}/>
+			<Checkbox label='subscribe to our newsletter' checked={subscribe} onChange={() => setSubscribe(!subscribe)}/>
 		</Form.Field>
 		<Form.Field>
 			<Checkbox label='I agree to the Terms and Conditions' onChange={() => setTerms(!terms)}/>

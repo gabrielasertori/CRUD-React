@@ -15,7 +15,6 @@ export function App() {
 		<Container>
 			<Link to="/create">Create new credential</Link>
 			<Link to="/read">Search credentials</Link>
-			<Link to="/update">Edit credential</Link>
 			<Link to="/">Home</Link>
 			<Routes>
 				<Route path="/" element={<Home />} />
