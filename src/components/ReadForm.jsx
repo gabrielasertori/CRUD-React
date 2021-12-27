@@ -7,9 +7,13 @@ import { Link } from 'react-router-dom';
 export function ReadForm() {
 	const [data, setData] = useState([]);
 
-	useEffect(() => {
+	const getData = () => {
 		axios.get(`https://61c48492f1af4a0017d9960f.mockapi.io/fakeData`)
 			.then((res) => {setData(res.data)})
+	}
+
+	useEffect(() => {
+		getData();
 	}, [])
 
 	const handleKeepData = (data) => {
@@ -20,6 +24,13 @@ export function ReadForm() {
         localStorage.setItem('Subscribe', subscribe);
 	}
 
+	const handleDelData = (data) => {
+		axios.delete(`https://61c48492f1af4a0017d9960f.mockapi.io/fakeData/${data.id}`)
+			.then(() => {
+				getData()
+			})
+	}
+
 	return (
 		<Table singleLine>
 			<Table.Header>
@@ -28,6 +39,7 @@ export function ReadForm() {
 					<Table.HeaderCell>Email</Table.HeaderCell>
 					<Table.HeaderCell>Subscribed</Table.HeaderCell>
 					<Table.HeaderCell>Update</Table.HeaderCell>
+					<Table.HeaderCell>Delete</Table.HeaderCell>
 				</Table.Row>
 			</Table.Header>
 
@@ -42,6 +54,9 @@ export function ReadForm() {
 						<Link to="/update">
 							<Button onClick={() => handleKeepData(entry)}>Update</Button>
 						</Link>
+					</TableCell>
+					<TableCell>
+						<Button onClick={() => handleDelData(entry)}>Delete</Button>
 					</TableCell>
 				</Table.Row>
 				)
