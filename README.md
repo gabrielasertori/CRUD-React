@@ -11,6 +11,8 @@ Com o CRUD temos o:
 - `update` é o que é usado para alterar alguma informação já criada. Utiliza o método `put` em requisições http.
 - `delete` remove o cadastro feito anteriormente. Utiliza o método `delete` em requisições http.
 
+### Homepage
+
 ![Homepage](./src/images/home_img.png)
 
 ## Backend por MockAPI
@@ -23,6 +25,8 @@ De acordo com a própria documentação:
 
 [Link para a ferramenta](https://mockapi.io/docs)
 
+### Página de criar novo cadastro
+
 ![Create](./src/images/create_img.png)
 
 ## Style com Styled Components
@@ -30,6 +34,8 @@ De acordo com a própria documentação:
 Styled Components é uma biblioteca pra React que utiliza o conceito de CSS-in-JS que facilita muito o desenvolvimento dos componentes juntamente à estilização.
 
 [Link para a ferramenta](https://styled-components.com/)
+
+### Página de listagem
 
 ![List](./src/images/list_img.png)
 
@@ -39,6 +45,8 @@ Semantic UI é um framework front-end que entrega componentes pré-prontos para 
 Semantic UI também te possibilita adicionar elementos no próprio html e não apenas com React.
 
 [Link para a ferramenta](https://react.semantic-ui.com/)
+
+### Página de atualizar cadastro existente
 
 ![Update](./src/images/update_img.png)
 
