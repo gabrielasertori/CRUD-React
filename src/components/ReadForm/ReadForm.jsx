@@ -48,7 +48,7 @@ export function ReadForm() {
 					</Card>
 				</Link>
 			</Display>
-			<Table singleLine>
+			<Table striped>
 				<Table.Header>
 					<Table.Row>
 						<Table.HeaderCell>Name</Table.HeaderCell>
