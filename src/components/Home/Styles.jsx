@@ -21,6 +21,11 @@ export const Container = styled.div`
 	min-height: 100vh;
 	height: 100%;
 	width: 500px;
+
+	@media (max-width: 768px) {
+		width: 100vw;
+		justify-content: center;
+	}
 `
 export const Card = styled.div`
 	background-color: #fdfdfd;
@@ -32,11 +37,28 @@ export const Card = styled.div`
 	margin: 0 30px 60px 30px;
 	width: 160px;
 	height: 170px;
+
+	&:hover {
+		background-color: #edfafb;
+	}
+
+	@media (max-width: 460px) {
+		margin: 0 10px 60px 10px;
+	}
+
+	@media (max-width: 388px) {
+		margin: 20px 0;
+	}
 `
 
 export const Display = styled.div`
 	display: flex;
 	justify-content: space-evenly;
+
+	@media (max-width: 388px) {
+		flex-direction: column;
+		align-items: center;
+	}
 `
 
 export const Info = styled.div`
@@ -49,4 +71,9 @@ export const Title = styled.h1`
 	font-family: 'Merriweather', serif;
 	font-size: 40px;
 	padding: 50px 0;
+
+	@media (max-width: 768px) {
+		font-size: 34px;
+		padding: 20px 0;
+	}
 `

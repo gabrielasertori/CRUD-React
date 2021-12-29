@@ -21,6 +21,11 @@ export const Container = styled.div`
 	flex-direction: column;
 	height: 100vh;
 	width: 500px;
+
+	@media (max-width: 768px) {
+		width: 100vw;
+		justify-content: center;
+	}
 `
 
 export const Title = styled.h2`
@@ -28,7 +33,13 @@ export const Title = styled.h2`
 	font-family: 'Merriweather', serif;
 	font-size: 32px;
 	padding: 50px 0;
+
+	@media (max-width: 768px) {
+		font-size: 34px;
+		padding: 20px 0;
+	}
 `
+
 export const Label = styled.label`
 	text-align: left;
 `
@@ -43,9 +54,26 @@ export const Card = styled.div`
 	margin: 15px;
 	width: 75px;
 	height: 80px;
+
+	&:hover {
+		background-color: #edfafb;
+	}
+
+	@media (max-width: 460px) {
+		margin: 0 10px 60px 10px;
+	}
+
+	@media (max-width: 388px) {
+		margin: 20px 0;
+	}
 `
 
 export const Display = styled.div`
 	display: flex;
 	justify-content: center;
+
+	@media (max-width: 388px) {
+		flex-direction: column;
+		align-items: center;
+	}
 `
